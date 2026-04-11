@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astra Comics Universe</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#05060d;
+  --bg2:#0a0c18;
+  --card:rgba(255,255,255,0.04);
+  --border:rgba(255,255,255,0.08);
+  --accent:#7a5cff;
+  --accent2:#00eaff;
+  --text:#ffffff;
+  --muted:#9aa0b3;
+}
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,var(--bg2),var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+.container{max-width:1200px;margin:auto;padding:0 20px}
+section{padding:120px 0;position:relative}
+
+h1,h2,h3{font-family:'Orbitron'}
+h1{font-size:3.8rem;letter-spacing:5px}
+h2{font-size:2.2rem;margin-bottom:20px}
+h3{font-size:1.1rem;color:var(--muted);letter-spacing:1px}
+p{color:var(--muted);line-height:1.7;font-size:1rem}
+
+/* NAVBAR */
+.nav{
+  position:fixed;top:0;width:100%;z-index:1000;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.3);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 20px;max-width:1200px;margin:auto;
+}
+.logo{font-family:'Orbitron';letter-spacing:2px}
+
+/* HERO */
+.hero{
+  height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+}
+.hero h1{text-shadow:0 0 40px rgba(122,92,255,.8)}
+.hero p{margin-top:10px;font-size:1.1rem}
+
+.btn{
+  display:inline-block;margin-top:30px;padding:14px 40px;
+  border-radius:30px;border:1px solid var(--accent);
+  transition:.3s;font-weight:500;
+}
+.btn:hover{background:var(--accent);box-shadow:0 0 30px var(--accent)}
+
+.hero-img{
+  position:absolute;bottom:0;width:420px;
+  animation:float 6s ease-in-out infinite;
+  filter:drop-shadow(0 0 40px var(--accent));
+}
+@keyframes float{50%{transform:translateY(-25px)}}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+  backdrop-filter:blur(12px);
+  transition:.35s;
+  position:relative;
+}
+.card::after{
+  content:"CLASSIFIED";
+  position:absolute;top:12px;right:12px;
+  font-size:10px;color:#ff4d4d;opacity:.5;
+}
+.card:hover{
+  transform:translateY(-10px);
+  border-color:var(--accent);
+  box-shadow:0 15px 40px rgba(122,92,255,.25);
+}
+
+/* CHARACTER */
+.character{text-align:center}
+.character img{
+  width:300px;margin-top:25px;
+  filter:drop-shadow(0 0 45px var(--accent));
+}
+
+/* DIVIDER */
+.divider{
+  width:60px;height:3px;background:var(--accent);
+  margin:20px auto;border-radius:10px;
+}
+
+/* STATUS */
+.status{text-align:center;font-size:2.2rem;text-shadow:0 0 25px var(--accent)}
+
+/* FORM */
+.form{display:flex;flex-direction:column;align-items:center;gap:18px}
+input{
+  width:320px;padding:14px;border-radius:10px;border:1px solid var(--border);
+  background:#0c0f1c;color:#fff;
+}
+input:focus{outline:none;border-color:var(--accent)}
+
+/* FOOTER */
+.footer{
+  border-top:1px solid var(--border);
+  padding:50px 20px;text-align:center;
+  font-size:0.9rem;color:var(--muted);
+}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* FADE */
+.fade{opacity:0;transform:translateY(50px);transition:0.8s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  h1{font-size:2.3rem}
+  .hero-img{width:260px}
+  input{width:90%}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <div class="logo">ASTRA UNIVERSE</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>ASTRA COMICS UNIVERSE</h1>
+    <div class="divider"></div>
+    <p>A New Era of Storytelling Begins</p>
+    <a href="#rebirth" class="btn">Enter the Universe</a>
+  </div>
+  <img src="assets/vajra1.png" class="hero-img">
+</section>
+
+<!-- REBIRTH -->
+<section id="rebirth" class="fade">
+  <div class="container">
+    <h2>REBIRTH</h2>
+    <div class="divider"></div>
+    <p>This is not a comeback. This is evolution. Astra Comics transforms into a unified cinematic storytelling universe — Astra Comics Universe.</p>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="fade">
+  <div class="container">
+    <h2>THE VISION</h2>
+    <div class="divider"></div>
+    <div class="grid">
+      <div class="card">Interconnected Multiverse</div>
+      <div class="card">Cinematic Storytelling System</div>
+      <div class="card">AI-Powered Narrative Engine</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTER -->
+<section class="fade">
+  <div class="container character">
+    <h2>VAJRA</h2>
+    <h3>The Divine Warrior</h3>
+    <img src="assets/vajra2.png">
+    <p>A force beyond gods. A protector beyond time. His arrival marks the ignition of a universe.</p>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="fade">
+  <div class="container">
+    <h2>THE FUTURE</h2>
+    <div class="divider"></div>
+    <div class="grid">
+      <div class="card">New Characters Incoming</div>
+      <div class="card">Phase 1 Development</div>
+      <div class="card">Confidential Story Arcs</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section class="fade">
+  <div class="container status">
+    Universe Launching Soon
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="fade">
+  <div class="container form">
+    <h2>ENTER THE UNIVERSE</h2>
+    <input type="email" placeholder="Your Email">
+    <a href="#" class="btn">Join Early Access</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+  © Astra Comics Universe. All Rights Reserved.<br>
+  Contact: <a href="mailto:amit@astracomics.in">amit@astracomics.in</a>
+</div>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+});
+document.querySelectorAll('.fade').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
 
